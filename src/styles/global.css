@@ -1,0 +1,379 @@
+/* Global CSS import container */
+@import "/assets/css/vendor/fontawesome.css";
+@import "/assets/css/plugins/swiper.css";
+@import "/assets/css/plugins/odometer.css";
+@import "/assets/css/vendor/animate.min.css";
+@import "/assets/css/vendor/bootstrap.min.css";
+@import "/assets/css/style.css";
+
+/* Modern Sans-Serif Typography Enforcement (No Times / Serif Fonts) */
+body, h1, h2, h3, h4, h5, h6, .card-title, .title, p, span, a, button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.card-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.3px !important;
+}
+
+/* Compact Bento Card Structure */
+.bento-achieve-card {
+  height: 185px !important;
+  padding: 16px !important;
+}
+
+/* Section and Banner Padding Fixes */
+.with-bento-about-banner {
+  padding-top: 40px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.section-header {
+  padding-top: 15px;
+}
+
+/* Profile Image Theme Styling */
+.profile-image-theme-wrap {
+  position: relative !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(0, 163, 255, 0.3) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 163, 255, 0.2) !important;
+}
+
+.profile-image-theme-wrap img {
+  border-radius: 14px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Subtle Dark Contact Card Layout */
+.contact-card-subtle {
+  background: #11171d !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.contact-card-subtle:hover {
+  border-color: rgba(0, 163, 255, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 163, 255, 0.1) !important;
+}
+
+.contact-icon-box {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.contact-value-link {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.contact-value-link:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Contact Card Clean Action Buttons */
+.contact-card-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 9px 16px !important;
+  border-radius: 8px !important;
+  background: #182029 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #e2e8f0 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+}
+
+.contact-card-action-btn:hover {
+  background: rgba(0, 163, 255, 0.18) !important;
+  border-color: rgba(0, 163, 255, 0.5) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(0, 163, 255, 0.2) !important;
+}
+
+/* Pixel-Perfect Equal Height Alignment for Work Experience & My Expert Area */
+.expertise-card,
+.work-experiance-card {
+  height: 270px !important;
+  overflow: hidden !important;
+  padding: 24px !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-main {
+  height: 185px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Expert Area 5-column grid & item spacing */
+.expertise-grid-5 {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 12px 6px !important;
+  margin-top: 14px !important;
+}
+
+@media (max-width: 1199px) {
+  .expertise-grid-5 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .expertise-grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.tmp-profile-card .expertise-card .expertise-item .image {
+  padding: 14px 4px !important;
+  border-radius: 10px !important;
+  background-color: rgba(43, 43, 43, 0.38) !important;
+}
+
+.tmp-profile-card .expertise-card .expertise-item .text .title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  margin-top: 4px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Always keep active glowing border & ambient light visible on active cards */
+.tmp-profile-card.tmponhover.active {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 10px 30px rgba(0, 163, 255, 0.25) !important;
+}
+
+.tmp-profile-card.tmponhover.active .tmp-light {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Work Experience Card Layout & Typography Fixes */
+.tmp-profile-card .work-experiance-card .work-experiance-slider {
+  animation: scrollBottomToTop 8s linear infinite !important;
+  padding: 0;
+  margin: 0;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding: 10px 12px !important;
+  margin-bottom: 10px !important;
+  background: #141c21 !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Highlight Present Company Item (Vizva Consultancy Services) */
+.tmp-profile-card .work-experiance-card .work-experiance-slider li.current-company-item {
+  border: 1px solid var(--color-primary) !important;
+  box-shadow: 0 0 16px rgba(0, 163, 255, 0.35) !important;
+  position: relative !important;
+  background: linear-gradient(135deg, rgba(0, 163, 255, 0.14) 0%, rgba(20, 28, 33, 0.95) 100%) !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li.current-company-item::before {
+  content: "PRESENT";
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 1px 7px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .date {
+  margin-right: 0 !important;
+  flex: 0 0 auto !important;
+  max-width: 120px !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .date p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  color: var(--color-body);
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .info .icon {
+  flex-shrink: 0 !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .info .text {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .info .text .title {
+  font-family: 'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px !important;
+  margin-bottom: 2px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  color: #ffffff !important;
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-slider li .info .text .subtitle {
+  font-family: 'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  color: var(--color-body) !important;
+}
+
+/* Work Experience marquee animation - Scrolling from bottom to top smoothly */
+@keyframes scrollBottomToTop {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.tmp-profile-card .work-experiance-card .work-experiance-main:hover .work-experiance-slider {
+  animation-play-state: paused !important;
+}
+
+/* Floating Modern Mobile Navigation Bar */
+@media (max-width: 767px) {
+  .header-area-bentogrid {
+    position: fixed !important;
+    bottom: 16px !important;
+    top: auto !important;
+    left: 16px !important;
+    right: 16px !important;
+    width: calc(100% - 32px) !important;
+    z-index: 9999 !important;
+    margin: 0 auto !important;
+  }
+
+  .header-area-bentogrid .menu-container {
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(12px) !important;
+    background-color: rgba(22, 28, 45, 0.95) !important;
+  }
+
+  .header-area-bentogrid .navbar-info {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .header-area-bentogrid .navbar-info .nav-item {
+    margin: 0 !important;
+    flex: 1 !important;
+    text-align: center !important;
+  }
+
+  .header-area-bentogrid .navbar-info .nav-link {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+
+  /* Hide tab label text on mobile viewports */
+  .header-area-bentogrid .navbar-info .nav-link span {
+    display: none !important;
+  }
+
+  /* Center icon and adjust icon size */
+  .header-area-bentogrid .navbar-info .nav-link .nav-icon {
+    margin-right: 0 !important;
+    font-size: 18px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .header-area-bentogrid .navbar-info .nav-link:not(.active):hover,
+  .header-area-bentogrid .navbar-info .nav-link:not(.active):focus {
+    background-color: transparent !important;
+    color: var(--color-heading) !important;
+  }
+
+  /* Mobile section top & container inner padding fixes */
+  .personal-portfolio-right-inner-wrapper {
+    margin-top: 20px !important;
+    padding-top: 15px !important;
+  }
+
+  .with-bento-about-banner {
+    padding-top: 30px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .section-header {
+    padding-top: 10px !important;
+  }
+
+  #tmp-page-content-bento {
+    padding-bottom: 95px !important;
+  }
+}
