@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import ProfileSidebar from './components/ProfileSidebar';
 import HomeSection from './components/HomeSection';
@@ -39,6 +40,9 @@ export default function App() {
 
       {/* Popup Modals */}
       <Modals />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
