@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HomeSection({ activeTab }) {
+export default function HomeSection({ activeTab, setActiveTab }) {
   const experienceItems = [
     { date: 'July 2026 - Present', company: 'Vizva Consultancy Services', role: 'Software Developer', icon: 'adobe.svg', isCurrent: true },
     { date: 'Jan 2026 - June 2026', company: 'AOSC Technologies India Pvt. Ltd.', role: 'Full Stack Web Development Intern', icon: 'google.svg' },
@@ -121,12 +121,12 @@ export default function HomeSection({ activeTab }) {
         {/* Row 2: Key Achievements & Specializations */}
         <div className="col-lg-6">
           <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
-            <div className="tmp-card-body p-3 d-flex flex-column h-100">
-              <h3 className="card-title mb--10" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700' }}>Key Achievements</h3>
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Key Achievements</h3>
               <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
                 {achievements.map((item, idx) => (
                   <div className="d-flex align-items-center gap-3" key={idx}>
-                    <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)' }}>
+                    <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
                       <i className={item.icon} style={{ color: '#00a3ff', fontSize: '14px' }}></i>
                     </div>
                     <div style={{ minWidth: 0 }}>
@@ -143,12 +143,12 @@ export default function HomeSection({ activeTab }) {
 
         <div className="col-lg-6">
           <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
-            <div className="tmp-card-body p-3 d-flex flex-column h-100">
-              <h3 className="card-title mb--10" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700' }}>Specializations</h3>
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Specializations</h3>
               <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
                 {servicesHighlights.map((item, idx) => (
                   <div className="d-flex align-items-center gap-3" key={idx}>
-                    <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)' }}>
+                    <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
                       <i className="fa-regular fa-layer-group" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
                     </div>
                     <div style={{ minWidth: 0 }}>
@@ -157,6 +157,257 @@ export default function HomeSection({ activeTab }) {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+            <div className="tmp-light light-right"></div>
+          </div>
+        </div>
+
+        {/* Row 3: Impact & Highlights + Current Focus & Tech Stack */}
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Impact & Highlights</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-rocket" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>5+ Production Apps</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Designed, Built & Maintained</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-circle-check" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>High Code Quality</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>SEO-Optimized, Modular Architecture</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-briefcase" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Open for Hire</h5>
+                    <span className="text-truncate d-block" style={{ color: '#00a3ff', fontSize: '11px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Full-Time & Remote Positions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tmp-light light-left"></div>
+          </div>
+        </div>
+
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Current Focus</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-brain" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>AI & LLM Integration</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Intelligent Agents & API Workflows</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-bolt" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Backend Microservices</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>FastAPI, Node.js & Database Systems</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-paper-plane" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Let's Collaborate</h5>
+                    {setActiveTab ? (
+                      <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('contactme'); }} className="text-truncate d-block" style={{ color: '#00a3ff', fontSize: '11px', fontWeight: '600', fontFamily: "'Inter', sans-serif", textDecoration: 'none' }}>
+                        Get In Touch <i className="fa-regular fa-arrow-right ms-1"></i>
+                      </a>
+                    ) : (
+                      <span className="text-truncate d-block" style={{ color: '#00a3ff', fontSize: '11px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>mokarramshahban.in@gmail.com</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tmp-light light-right"></div>
+          </div>
+        </div>
+
+        {/* Row 4: Education & Developer Tooling */}
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Education & Background</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-graduation-cap" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>B.Tech Computer Science</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>KCET (2022 - 2026)</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-laptop-mobile" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Web Design Traineeship</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Green Apple Media Solution (2023–2024)</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-trophy" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Best Poster Award</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>National Level Tech Symposiums</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tmp-light light-left"></div>
+          </div>
+        </div>
+
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Developer Tooling</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-code" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Dev Environment</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>VS Code, Git, GitHub Actions, Linux</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-palette" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>UI & Styling</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Figma, Tailwind CSS, Glassmorphism</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-server" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>API & Database</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Postman, MongoDB Atlas, PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tmp-light light-right"></div>
+          </div>
+        </div>
+
+        {/* Row 5: Work History Highlights & Quick Contact */}
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Career Highlights</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-briefcase" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Software Developer</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Vizva Consultancy Services (2026–Present)</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-laptop-code" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Full Stack Intern</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>AOSC Technologies India (2026)</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-user-gear" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Web Dev & Co-Founder</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>MxNext.in (2023–2024)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tmp-light light-left"></div>
+          </div>
+        </div>
+
+        <div className="col-lg-6">
+          <div className="tmp-profile-card bento-achieve-card tmponhover single-animation active">
+            <div className="tmp-card-body p-0 d-flex flex-column h-100">
+              <h3 className="card-title" style={{ fontSize: '17px', color: '#ffffff', fontWeight: '700', margin: '0 0 12px 0' }}>Quick Contact</h3>
+              <div className="d-flex flex-column gap-2 flex-grow-1 justify-content-center">
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-location-dot" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Location</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>India (Open to Global Remote)</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-clock" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Response Time</h5>
+                    <span className="text-truncate d-block" style={{ color: '#8c96a5', fontSize: '11px', fontFamily: "'Inter', sans-serif" }}>Within 24 Hours</span>
+                  </div>
+                </div>
+
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(0, 163, 255, 0.12)', border: '1px solid rgba(0, 163, 255, 0.3)', flexShrink: 0 }}>
+                    <i className="fa-regular fa-envelope-open" style={{ color: '#00a3ff', fontSize: '14px' }}></i>
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <h5 className="mb-0 text-truncate" style={{ color: '#ffffff', fontSize: '13px', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}>Direct Email</h5>
+                    <a href="mailto:mokarramshahban.in@gmail.com" className="text-truncate d-block" style={{ color: '#00a3ff', fontSize: '11px', fontWeight: '600', fontFamily: "'Inter', sans-serif", textDecoration: 'none' }}>
+                      mokarramshahban.in@gmail.com
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="tmp-light light-right"></div>

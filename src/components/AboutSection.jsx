@@ -34,38 +34,7 @@ export default function AboutSection({ activeTab, setActiveTab }) {
           <div className="separator-animated-border animated-true" style={{ width: '100%' }}></div>
         </div>
 
-        {/* Counterup / Highlights area */}
-        <div className="counterup-area-personal pb--80">
-          <div className="row g-5 animation-action-1">
-            <div className="col-lg-4 col-md-6 col-sm-6 col-12 paralax-image">
-              <div className="count-box counter-style-2 border-style small-radious text-center">
-                <div className="counter-main-wrapper-card single-animation tmponhover active">
-                  <h3 className="count-number"><span className="odometer" data-count="5">5</span>+</h3>
-                  <div className="tmp-light light-center"></div>
-                </div>
-                <h5 className="title">Web Projects Delivered</h5>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-12 paralax-image">
-              <div className="count-box counter-style-2 border-style small-radious text-center">
-                <div className="counter-main-wrapper-card single-animation tmponhover">
-                  <h3 className="count-number"><span className="odometer" data-count="2">2</span></h3>
-                  <div className="tmp-light light-center"></div>
-                </div>
-                <h5 className="title">Govt UI/UX Audits</h5>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-12 paralax-image">
-              <div className="count-box counter-style-2 border-style small-radious text-center">
-                <div className="counter-main-wrapper-card single-animation tmponhover">
-                  <h3 className="count-number"><span className="odometer" data-count="2026">2026</span></h3>
-                  <div className="tmp-light light-center"></div>
-                </div>
-                <h5 className="title">B.Tech CSE Graduate</h5>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         {/* About Me Section & Progress Bars */}
         <div className="banner-personal-portfolio signle-section pb--80">

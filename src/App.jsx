@@ -26,7 +26,7 @@ export default function App() {
 
                 {/* Right Tab Content Container */}
                 <div className="col-xl-8 tab-content">
-                  <HomeSection activeTab={activeTab} />
+                  <HomeSection activeTab={activeTab} setActiveTab={setActiveTab} />
                   <AboutSection activeTab={activeTab} setActiveTab={setActiveTab} />
                   <ServicesSection activeTab={activeTab} />
                   <ContactSection activeTab={activeTab} />

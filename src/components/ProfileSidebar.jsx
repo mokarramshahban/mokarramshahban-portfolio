@@ -72,8 +72,8 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
               <div className="social-area mt--30">
                 <div className="social-link justify-content-center">
                   <a href="https://github.com/mokarramshahban" target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a>
-                  <a href="https://www.instagram.com/mokarramshahban.in" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
-                  <a href="#" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/mokarramshahban.in/" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/mokarram-shahban/" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>

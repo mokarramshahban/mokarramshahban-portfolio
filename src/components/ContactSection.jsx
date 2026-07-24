@@ -37,8 +37,15 @@ export default function ContactSection({ activeTab }) {
       title: 'LinkedIn',
       value: 'Mokarram Shahban',
       icon: 'fa-brands fa-linkedin-in',
-      link: 'https://linkedin.com',
+      link: 'https://www.linkedin.com/in/mokarram-shahban/',
       btnText: 'Connect'
+    },
+    {
+      title: 'Instagram',
+      value: 'mokarramshahban.in',
+      icon: 'fa-brands fa-instagram',
+      link: 'https://www.instagram.com/mokarramshahban.in/',
+      btnText: 'Follow'
     },
     {
       title: 'Location',

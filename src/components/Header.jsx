@@ -45,7 +45,7 @@ export default function Header({ activeTab, setActiveTab }) {
                   color: '#ffffff',
                   letterSpacing: '-0.5px'
                 }}>
-                  Mokarram<span style={{ color: '#00a3ff' }}>.dev</span>
+                  Mokarram <span style={{ color: '#00a3ff' }}>Shahban</span>
                 </span>
               </a>
             </div>
