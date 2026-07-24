@@ -1,4 +1,5 @@
 import React from 'react';
+import AIFeaturesSection from './AIFeaturesSection.jsx';
 
 export default function HomeSection({ activeTab, setActiveTab }) {
   const experienceItems = [
@@ -597,6 +598,9 @@ export default function HomeSection({ activeTab, setActiveTab }) {
             <div className="tmp-light light-right"></div>
           </div>
         </div>
+
+        {/* Explore AI Capabilities Section */}
+        <AIFeaturesSection setActiveTab={setActiveTab} />
 
       </div>
     </div>

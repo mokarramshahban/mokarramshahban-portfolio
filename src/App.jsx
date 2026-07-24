@@ -9,6 +9,8 @@ import ServicesSection from './components/ServicesSection';
 import ContactSection from './components/ContactSection';
 import Modals from './components/Modals';
 import ChatWidget from './components/ChatWidget';
+import { PersonalizationProvider } from './context/PersonalizationContext';
+import PersonalizationBadge from './components/PersonalizationBadge';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -23,41 +25,46 @@ export default function App() {
   }, [activeTab]);
 
   return (
-    <div id="tmp-page-content-bento">
-      {/* Header Navigation */}
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+    <PersonalizationProvider>
+      <div id="tmp-page-content-bento">
+        {/* Header Navigation */}
+        <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {/* Main Content Body */}
-      <div className="main-page-content" style={{ paddingTop: '24px' }}>
-        <div className="tab-content" id="myTabContent">
-          <div className="main-demo-front">
-            <div className="container">
-              <div className="row">
-                {/* Left Profile Sidebar Card */}
-                <ProfileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
+        {/* Main Content Body */}
+        <div className="main-page-content" style={{ paddingTop: '24px' }}>
+          <div className="tab-content" id="myTabContent">
+            <div className="main-demo-front">
+              <div className="container">
+                <div className="row">
+                  {/* Left Profile Sidebar Card */}
+                  <ProfileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
 
-                {/* Right Tab Content Container */}
-                <div className="col-xl-8 tab-content">
-                  <HomeSection activeTab={activeTab} setActiveTab={setActiveTab} />
-                  <AboutSection activeTab={activeTab} setActiveTab={setActiveTab} />
-                  <ProjectsSection activeTab={activeTab} />
-                  <ServicesSection activeTab={activeTab} />
-                  <ContactSection activeTab={activeTab} />
+                  {/* Right Tab Content Container */}
+                  <div className="col-xl-8 tab-content">
+                    <HomeSection activeTab={activeTab} setActiveTab={setActiveTab} />
+                    <AboutSection activeTab={activeTab} setActiveTab={setActiveTab} />
+                    <ProjectsSection activeTab={activeTab} />
+                    <ServicesSection activeTab={activeTab} />
+                    <ContactSection activeTab={activeTab} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Floating AI Chat Assistant */}
+        <ChatWidget />
+
+        {/* Adaptive Persona Badge (appears after 2+ interactions) */}
+        <PersonalizationBadge />
+
+        {/* Popup Modals */}
+        <Modals />
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </div>
-
-      {/* Floating AI Chat Assistant */}
-      <ChatWidget />
-
-      {/* Popup Modals */}
-      <Modals />
-
-      {/* Vercel Analytics */}
-      <Analytics />
-    </div>
+    </PersonalizationProvider>
   );
 }

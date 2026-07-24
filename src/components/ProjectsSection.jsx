@@ -1,27 +1,50 @@
 import React, { useState } from 'react';
 import projectsData from '../data/projects.json';
+import ProjectRecommendations from './ProjectRecommendations.jsx';
+import { usePersonalization } from '../context/PersonalizationContext';
+import { sortProjectsByPersona } from '../utils/personaEngine';
 
 export default function ProjectsSection({ activeTab }) {
   const [selectedTag, setSelectedTag] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const { trackInteraction, themeConfig } = usePersonalization();
 
   // Curate high-impact tech tags for dropdown filtering
   const featuredTags = ['All', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Full Stack', 'Tailwind CSS', 'REST API', 'Socket.io', 'UI/UX Design'];
   const extraTags = [...new Set(projectsData.flatMap(p => (p.tags || []).map(t => (t === 'React 19' || t === 'ReactJS' || t === 'React') ? 'React.js' : t)))].filter(t => !featuredTags.includes(t));
   const allTags = [...featuredTags, ...extraTags];
 
-  // Filter projects by tag and search query
+  // Filter projects by tag and search query with normalized matching
   const filteredProjects = projectsData.filter(project => {
     const projTags = (project.tags || []).map(t => (t === 'React 19' || t === 'ReactJS' || t === 'React') ? 'React.js' : t);
     const projLang = (project.language === 'React 19' || project.language === 'React') ? 'React.js' : project.language;
     const matchesTag = selectedTag === 'All' || projTags.includes(selectedTag) || projLang === selectedTag;
-    const matchesSearch = searchQuery === '' || 
-      project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (project.summary && project.summary.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (project.language && project.language.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (project.tags && project.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())));
+
+    const rawSearch = searchQuery.trim().toLowerCase();
+    const cleanSearch = rawSearch.replace(/[^a-z0-9]/g, '');
+
+    const searchableText = [
+      project.name,
+      project.summary,
+      project.highlight,
+      project.language,
+      ...(project.tags || []),
+      ...(projTags || [])
+    ].filter(Boolean).join(' ').toLowerCase();
+
+    const cleanSearchable = searchableText.replace(/[^a-z0-9]/g, '');
+
+    const matchesSearch = rawSearch === '' || 
+      searchableText.includes(rawSearch) || 
+      cleanSearchable.includes(cleanSearch);
+
     return matchesTag && matchesSearch;
   });
+
+  // Re-sort filtered results according to the detected persona's preference weights
+  const personaSortedProjects = themeConfig
+    ? sortProjectsByPersona(filteredProjects, themeConfig.sortWeights)
+    : filteredProjects;
 
   return (
     <div className={`tab-pane fade pl--30 pl_md--10 pl_sm--10 ${activeTab === 'projects' ? 'show active' : ''}`} id="projects" role="tabpanel">
@@ -71,7 +94,11 @@ export default function ProjectsSection({ activeTab }) {
                 <select
                   className="form-select"
                   value={selectedTag}
-                  onChange={(e) => setSelectedTag(e.target.value)}
+                  onChange={(e) => {
+                    const tag = e.target.value;
+                    setSelectedTag(tag);
+                    if (tag !== 'All') trackInteraction(tag);
+                  }}
                   style={{
                     backgroundColor: '#141821',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -114,9 +141,9 @@ export default function ProjectsSection({ activeTab }) {
         </div>
 
         {/* Projects Area using exact template service hover glow card structure */}
-        <div className="tmp-service-area tmp-section-gapBottom banner-personal-portfolio signle-section">
+        <div className="tmp-service-area mb-4 banner-personal-portfolio signle-section">
           <div className="row g-4 service-wrapper animation-action-3">
-            {filteredProjects.length === 0 ? (
+            {personaSortedProjects.length === 0 ? (
               <div className="col-12 text-center py-5">
                 <p style={{ color: '#a0a5b5', fontSize: '16px' }}>No projects match your search query or selected filter.</p>
                 <button 
@@ -135,7 +162,7 @@ export default function ProjectsSection({ activeTab }) {
                 </button>
               </div>
             ) : (
-              filteredProjects.map((project, index) => (
+              personaSortedProjects.map((project, index) => (
                 <div key={project.name || index} className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                   <div className="service service__style--1 bg-color-card service-narrow radius tmp-border-none tmponhover single-animation h-100 d-flex flex-column justify-content-between p-4 text-start">
                     <div>
@@ -216,7 +243,7 @@ export default function ProjectsSection({ activeTab }) {
                         {project.tags && project.tags.map((tag, tIdx) => (
                           <span 
                             key={tIdx} 
-                            onClick={() => setSelectedTag(tag)}
+                            onClick={() => { setSelectedTag(tag); trackInteraction(tag); }}
                             style={{ 
                               fontSize: '11px', 
                               color: '#808595', 
@@ -260,6 +287,16 @@ export default function ProjectsSection({ activeTab }) {
             )}
           </div>
         </div>
+
+        {/* Smart Project Recommendation Matrix Section */}
+        <ProjectRecommendations 
+          currentProjectId={selectedTag !== 'All' ? selectedTag : 'mokarramshahban-portfolio'}
+          onSelectProject={(proj) => {
+            if (proj.repoUrl) {
+              window.open(proj.repoUrl, '_blank', 'noopener,noreferrer');
+            }
+          }}
+        />
 
       </div>
     </div>

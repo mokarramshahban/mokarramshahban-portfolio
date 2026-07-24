@@ -1,4 +1,5 @@
 import React from 'react';
+import RecruiterSkillMatcher from './RecruiterSkillMatcher.jsx';
 
 export default function AboutSection({ activeTab, setActiveTab }) {
   const skills = [
@@ -246,103 +247,11 @@ export default function AboutSection({ activeTab, setActiveTab }) {
           <div className="tmp-light light-left"></div>
         </div>
 
-        {/* Skills Section - Modern Glass Cards */}
-        <div className="mb--50 banner-personal-portfolio signle-section">
-          <div className="section-header pb--30">
-            <h4 className="subtitle" style={{ color: '#00a3ff', fontSize: '13px', fontWeight: '700' }}>
-              <i className="fa-solid fa-layer-group me-2"></i> TECHNICAL SPECIALIZATIONS
-            </h4>
-            <h2 className="title" style={{ fontSize: '24px', color: '#ffffff', fontWeight: '700' }}>
-              Core Technical <span style={{ color: '#00a3ff' }}>Stack & Proficiency</span>
-            </h2>
-          </div>
+        {/* 2. RECRUITER SKILL MATCHER WIDGET */}
+        <RecruiterSkillMatcher />
 
-          <div className="row g-3">
-            {skills.map((skill, index) => (
-              <div className="col-lg-4 col-md-6 col-12" key={index}>
-                <div 
-                  className="p-4 h-100 d-flex flex-column justify-content-between position-relative"
-                  style={{
-                    backgroundColor: '#10151f',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '16px',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'pointer'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.borderColor = skill.color;
-                    e.currentTarget.style.boxShadow = `0 8px 24px ${skill.color}25`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
-                  <div className="d-flex justify-content-between align-items-center mb-3">
-                    <div className="d-flex align-items-center gap-3">
-                      <div 
-                        className="d-flex align-items-center justify-content-center" 
-                        style={{ 
-                          width: '44px', 
-                          height: '44px', 
-                          borderRadius: '12px', 
-                          backgroundColor: `${skill.color}15`,
-                          border: `1px solid ${skill.color}35`,
-                          flexShrink: 0
-                        }}
-                      >
-                        {skill.icon}
-                      </div>
-                      <div>
-                        <h5 className="m-0" style={{ color: '#ffffff', fontSize: '15px', fontWeight: '700' }}>{skill.name}</h5>
-                        <span style={{ fontSize: '11px', color: '#8c96a5', fontWeight: '500' }}>{skill.level}</span>
-                      </div>
-                    </div>
-
-                    <span 
-                      style={{ 
-                        fontSize: '12px', 
-                        fontWeight: '800', 
-                        color: skill.color,
-                        backgroundColor: `${skill.color}18`,
-                        border: `1px solid ${skill.color}40`,
-                        padding: '3px 10px',
-                        borderRadius: '8px'
-                      }}
-                    >
-                      {skill.val}%
-                    </span>
-                  </div>
-
-                  <div>
-                    <div className="progress" style={{ height: '7px', backgroundColor: 'rgba(255, 255, 255, 0.06)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                      <div 
-                        className="progress-bar" 
-                        role="progressbar" 
-                        style={{ 
-                          width: `${skill.val}%`, 
-                          background: `linear-gradient(90deg, ${skill.color}88 0%, ${skill.color} 100%)`, 
-                          boxShadow: `0 0 10px ${skill.color}66`,
-                          borderRadius: '4px' 
-                        }} 
-                        aria-valuenow={skill.val} 
-                        aria-valuemin="0" 
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="tmp-light light-left"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* WORK EXPERIENCE PATHWAY */}
-        <div className="mb--50 banner-personal-portfolio experience-style-list signle-section">
+        {/* 3. WORK EXPERIENCE PATHWAY */}
+        <div className="mb--50 banner-personal-portfolio experience-style-list signle-section mt-5">
           <div className="section-header pb--30">
             <h4 className="subtitle" style={{ color: '#00a3ff', fontSize: '13px', fontWeight: '700' }}>
               <i className="fa-regular fa-briefcase me-2"></i> PROFESSIONAL CAREER PATHWAY
@@ -499,7 +408,7 @@ export default function AboutSection({ activeTab, setActiveTab }) {
           </div>
         </div>
 
-        {/* DEDICATED ACADEMIC & EDUCATION HIGHLIGHT */}
+        {/* 4. DEDICATED ACADEMIC & EDUCATION HIGHLIGHT */}
         <div className="mb--50 banner-personal-portfolio experience-style-list signle-section">
           <div className="section-header pb--30">
             <h4 className="subtitle" style={{ color: '#ffd700', fontSize: '13px', fontWeight: '700' }}>
@@ -584,6 +493,101 @@ export default function AboutSection({ activeTab, setActiveTab }) {
             </div>
 
             <div className="tmp-light light-right"></div>
+          </div>
+        </div>
+
+        {/* 5. CORE TECHNICAL STACK & PROFICIENCY GRID */}
+        <div className="mb--50 banner-personal-portfolio signle-section">
+          <div className="section-header pb--30">
+            <h4 className="subtitle" style={{ color: '#00a3ff', fontSize: '13px', fontWeight: '700' }}>
+              <i className="fa-solid fa-layer-group me-2"></i> TECHNICAL SPECIALIZATIONS
+            </h4>
+            <h2 className="title" style={{ fontSize: '24px', color: '#ffffff', fontWeight: '700' }}>
+              Core Technical <span style={{ color: '#00a3ff' }}>Stack & Proficiency</span>
+            </h2>
+          </div>
+
+          <div className="row g-3">
+            {skills.map((skill, index) => (
+              <div className="col-lg-4 col-md-6 col-12" key={index}>
+                <div 
+                  className="p-4 h-100 d-flex flex-column justify-content-between position-relative"
+                  style={{
+                    backgroundColor: '#10151f',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '16px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.borderColor = skill.color;
+                    e.currentTarget.style.boxShadow = `0 8px 24px ${skill.color}25`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <div className="d-flex align-items-center gap-3">
+                      <div 
+                        className="d-flex align-items-center justify-content-center" 
+                        style={{ 
+                          width: '44px', 
+                          height: '44px', 
+                          borderRadius: '12px', 
+                          backgroundColor: `${skill.color}15`,
+                          border: `1px solid ${skill.color}35`,
+                          flexShrink: 0
+                        }}
+                      >
+                        {skill.icon}
+                      </div>
+                      <div>
+                        <h5 className="m-0" style={{ color: '#ffffff', fontSize: '15px', fontWeight: '700' }}>{skill.name}</h5>
+                        <span style={{ fontSize: '11px', color: '#8c96a5', fontWeight: '500' }}>{skill.level}</span>
+                      </div>
+                    </div>
+
+                    <span 
+                      style={{ 
+                        fontSize: '12px', 
+                        fontWeight: '800', 
+                        color: skill.color,
+                        backgroundColor: `${skill.color}18`,
+                        border: `1px solid ${skill.color}40`,
+                        padding: '3px 10px',
+                        borderRadius: '8px'
+                      }}
+                    >
+                      {skill.val}%
+                    </span>
+                  </div>
+
+                  <div>
+                    <div className="progress" style={{ height: '7px', backgroundColor: 'rgba(255, 255, 255, 0.06)', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.04)' }}>
+                      <div 
+                        className="progress-bar" 
+                        role="progressbar" 
+                        style={{ 
+                          width: `${skill.val}%`, 
+                          background: `linear-gradient(90deg, ${skill.color}88 0%, ${skill.color} 100%)`, 
+                          boxShadow: `0 0 10px ${skill.color}66`,
+                          borderRadius: '4px' 
+                        }} 
+                        aria-valuenow={skill.val} 
+                        aria-valuemin="0" 
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="tmp-light light-left"></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

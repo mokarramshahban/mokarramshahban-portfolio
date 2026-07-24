@@ -6,6 +6,46 @@
 @import "/assets/css/vendor/bootstrap.min.css";
 @import "/assets/css/style.css";
 
+/* ─── Persona Adaptive Theme Engine ─────────────────────────────────────────
+   Default values match the portfolio's original Electric Blue palette.
+   These are overridden in real-time by personaEngine.js → applyThemeToRoot().
+   The template's own --color-primary and --theme-gradient are remapped here
+   so the ENTIRE site adapts — not just custom components.
+────────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Persona tokens (set by JS) */
+  --persona-accent:        #00a3ff;
+  --persona-accent-glow:   rgba(0, 163, 255, 0.25);
+  --persona-accent-soft:   rgba(0, 163, 255, 0.08);
+  --persona-accent-border: rgba(0, 163, 255, 0.3);
+  --persona-gradient:      linear-gradient(135deg, #00a3ff 0%, #00e5ff 100%);
+  --persona-badge-bg:      rgba(0, 163, 255, 0.12);
+  --persona-badge-color:   #00a3ff;
+
+  /* Remap template's color system to persona tokens */
+  --color-primary:     var(--persona-accent) !important;
+  --color-primary-alt: var(--persona-accent) !important;
+  --theme-gradient:    var(--persona-gradient) !important;
+}
+
+/* Smooth color transitions across the whole site when persona switches */
+*, *::before, *::after {
+  transition:
+    color 0.5s ease,
+    background-color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease !important;
+}
+
+/* Exclude transitions on layout/position properties to avoid jank */
+*, *::before, *::after {
+  transition-property:
+    color, background-color, border-color, box-shadow,
+    fill, stroke, outline-color !important;
+}
+
+
+
 /* Modern Sans-Serif Typography Enforcement (No Times / Serif Fonts) */
 body, h1, h2, h3, h4, h5, h6, .card-title, .title, p, span, a, button {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
