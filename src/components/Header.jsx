@@ -34,7 +34,7 @@ export default function Header({ activeTab, setActiveTab }) {
               width: '32px',
               height: '32px',
               borderRadius: '8px',
-              background: 'linear-gradient(135deg, #00a3ff 0%, #0066ff 100%)',
+              background: 'var(--persona-gradient)',
               color: '#ffffff',
               fontWeight: '800',
               fontSize: '16px'
@@ -43,7 +43,7 @@ export default function Header({ activeTab, setActiveTab }) {
             M
           </div>
           <span style={{ fontWeight: '700', fontSize: '16px', color: '#ffffff', letterSpacing: '-0.3px' }}>
-            Mokarram <span style={{ color: '#00a3ff' }}>Shahban</span>
+            Mokarram <span style={{ color: 'var(--persona-accent)', transition: 'color 0.5s ease' }}>Shahban</span>
           </span>
         </a>
 
@@ -51,9 +51,9 @@ export default function Header({ activeTab, setActiveTab }) {
           href="#"
           onClick={(e) => { e.preventDefault(); setActiveTab('contactme'); }}
           style={{
-            backgroundColor: 'rgba(0, 163, 255, 0.15)',
-            border: '1px solid rgba(0, 163, 255, 0.4)',
-            color: '#00a3ff',
+            backgroundColor: 'var(--persona-accent-soft)',
+            border: '1px solid var(--persona-accent-border)',
+            color: 'var(--persona-accent)',
             borderRadius: '20px',
             padding: '5px 14px',
             fontSize: '12px',
@@ -86,8 +86,8 @@ export default function Header({ activeTab, setActiveTab }) {
                       width: '36px',
                       height: '36px',
                       borderRadius: '10px',
-                      background: 'linear-gradient(135deg, #00a3ff 0%, #0066ff 100%)',
-                      boxShadow: '0 0 15px rgba(0, 163, 255, 0.4)',
+                      background: 'var(--persona-gradient)',
+                      boxShadow: '0 0 15px var(--persona-accent-glow)',
                       color: '#ffffff',
                       fontWeight: '800',
                       fontSize: '18px',
@@ -103,7 +103,7 @@ export default function Header({ activeTab, setActiveTab }) {
                     color: '#ffffff',
                     letterSpacing: '-0.5px'
                   }}>
-                    Mokarram <span style={{ color: '#00a3ff' }}>Shahban</span>
+                    Mokarram <span style={{ color: 'var(--persona-accent)', transition: 'color 0.5s ease' }}>Shahban</span>
                   </span>
                 </a>
               </div>
