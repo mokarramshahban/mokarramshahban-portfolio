@@ -1,0 +1,384 @@
+[
+  {
+    "name": "mokarramshahban-portfolio",
+    "repoUrl": "https://github.com/mokarramshahban/mokarramshahban-portfolio",
+    "summary": "Personal developer portfolio featuring a glassmorphic Bento grid architecture and an automated Node.js AI build pipeline.",
+    "highlight": "Integrates build-time Node.js script that queries GitHub APIs and leverages Puter.js AI (Claude 3.5 Sonnet) for dynamic project indexing.",
+    "tags": [
+      "React.js",
+      "Vite",
+      "Puter.js AI",
+      "Node.js",
+      "Bento Grid",
+      "Full Stack"
+    ],
+    "language": "React.js",
+    "lastUpdated": "2026-07-24T11:45:24Z"
+  },
+  {
+    "name": "TRIPAZI-Travel-Agency",
+    "repoUrl": "https://github.com/mokarramshahban/TRIPAZI-Travel-Agency",
+    "summary": "A sleek, modern travel agency platform featuring interactive tour destination showcases, booking inquiry flows, and glassmorphic UI design.",
+    "highlight": "Crafted responsive travel package cards, custom CSS glassmorphism, and smooth section scroll animations.",
+    "tags": [
+      "React.js",
+      "UI/UX Design",
+      "CSS3 Glassmorphism",
+      "Responsive Design",
+      "Frontend"
+    ],
+    "language": "React.js / UI",
+    "lastUpdated": "2026-07-20T05:42:08Z"
+  },
+  {
+    "name": "DevTinder",
+    "repoUrl": "https://github.com/mokarramshahban/DevTinder",
+    "summary": "A full-stack social networking platform for software developers to connect, discover peers by tech stack, and send connection requests.",
+    "highlight": "Designed RESTful backend API routes using Node.js & Express with JWT user authentication and MongoDB schema relationships.",
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Auth",
+      "REST API",
+      "Full Stack"
+    ],
+    "language": "Node.js & Express",
+    "lastUpdated": "2026-06-23T16:24:11Z"
+  },
+  {
+    "name": "FlixFusion",
+    "repoUrl": "https://github.com/mokarramshahban/FlixFusion",
+    "summary": "An interactive streaming web application for discovering movies and trending shows with real-time TMDB API search and dynamic categories.",
+    "highlight": "Implemented async API fetching, custom hooks for movie carousels, and responsive video previews.",
+    "tags": [
+      "React.js",
+      "Redux",
+      "REST API",
+      "Tailwind CSS",
+      "Web App"
+    ],
+    "language": "React.js",
+    "lastUpdated": "2026-06-08T02:05:22Z"
+  },
+  {
+    "name": "Food-Delivery-App-UI-REACT.JS",
+    "repoUrl": "https://github.com/mokarramshahban/Food-Delivery-App-UI-REACT.JS",
+    "summary": "A feature-rich production-grade online food delivery application built with React 19, Redux Toolkit for state management, dynamic routing, and Tailwind CSS.",
+    "highlight": "Engineered responsive food menu filtering, cart state management, and unit test suites using Jest and React Testing Library.",
+    "tags": [
+      "React.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Parcel",
+      "Jest",
+      "Frontend Framework"
+    ],
+    "language": "React.js",
+    "lastUpdated": "2026-03-03T13:48:44Z"
+  },
+  {
+    "name": "techurja2k25",
+    "repoUrl": "https://github.com/mokarramshahban/techurja2k25",
+    "summary": "Official web platform for Tech Urja 2025 national technical symposium, managing event registrations and schedules for 1,200+ attendees.",
+    "highlight": "Built event catalog, participant registration interface, and responsive timeline schedule.",
+    "tags": [
+      "React.js",
+      "Event Platform",
+      "UI/UX Design",
+      "Responsive Web"
+    ],
+    "language": "React.js",
+    "lastUpdated": "2026-01-29T12:04:19Z"
+  },
+  {
+    "name": "Roomnest",
+    "repoUrl": "https://github.com/mokarramshahban/Roomnest",
+    "summary": "An online accommodation and room rental search portal enabling users to browse verified properties, check amenities, and submit booking requests.",
+    "highlight": "Created property search filters, interactive image galleries, and booking inquiry workflows.",
+    "tags": [
+      "Full Stack",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "UI/UX"
+    ],
+    "language": "Full Stack",
+    "lastUpdated": "2025-09-22T12:09:16Z"
+  },
+  {
+    "name": "express-mongo-chat",
+    "repoUrl": "https://github.com/mokarramshahban/express-mongo-chat",
+    "summary": "A real-time multi-room messaging engine powered by Node.js, Express, MongoDB persistence, and Socket.io for bi-directional communication.",
+    "highlight": "Architected real-time WebSocket event listeners with chat history stored in MongoDB collections.",
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+      "WebSockets",
+      "Backend"
+    ],
+    "language": "Node.js & Express",
+    "lastUpdated": "2025-08-01T05:49:25Z"
+  },
+  {
+    "name": "msnext.in",
+    "repoUrl": "https://github.com/mokarramshahban/msnext.in",
+    "summary": "Official corporate platform for MxNext.in delivering web design, client audits, and digital solutions.",
+    "highlight": "Co-led development of scalable web layouts and performed UI/UX accessibility audits.",
+    "tags": [
+      "React.js",
+      "UI/UX Design",
+      "Corporate Web",
+      "Frontend"
+    ],
+    "language": "React.js",
+    "lastUpdated": "2025-05-21T15:09:27Z"
+  },
+  {
+    "name": "Student-Management-API",
+    "repoUrl": "https://github.com/mokarramshahban/Student-Management-API",
+    "summary": "A secure backend CRUD REST API service for managing academic records, student profiles, and grade distributions.",
+    "highlight": "Built modular Express controllers, input validation schemas, and MongoDB Mongoose models with error handling.",
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+      "CRUD",
+      "Backend"
+    ],
+    "language": "Node.js & Express",
+    "lastUpdated": "2024-09-30T06:44:36Z"
+  },
+  {
+    "name": "kcet-cse-clubs",
+    "repoUrl": "https://github.com/mokarramshahban/kcet-cse-clubs",
+    "summary": "kcet-cse-clubs is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2025-07-29T16:59:00Z"
+  },
+  {
+    "name": "unitedcarwash",
+    "repoUrl": "https://github.com/mokarramshahban/unitedcarwash",
+    "summary": "Commercial web interface for automobile detailing and car wash booking services with dynamic package selection.",
+    "highlight": "Designed service tier selection cards, booking forms, and mobile-optimized layouts.",
+    "tags": [
+      "UI/UX Design",
+      "Frontend Development",
+      "Responsive Web"
+    ],
+    "language": "Frontend",
+    "lastUpdated": "2025-04-29T11:03:47Z"
+  },
+  {
+    "name": "appifyra",
+    "repoUrl": "https://github.com/mokarramshahban/appifyra",
+    "summary": "appifyra is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using JavaScript, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "JavaScript",
+      "Web Development"
+    ],
+    "language": "JavaScript",
+    "lastUpdated": "2025-03-19T05:24:46Z"
+  },
+  {
+    "name": "kcetassignments",
+    "repoUrl": "https://github.com/mokarramshahban/kcetassignments",
+    "summary": "kcetassignments is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2025-01-30T08:50:00Z"
+  },
+  {
+    "name": "appifyra---coming-soon",
+    "repoUrl": "https://github.com/mokarramshahban/appifyra---coming-soon",
+    "summary": "appifyra---coming-soon is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-12-18T08:06:45Z"
+  },
+  {
+    "name": "Random-Number-Generator",
+    "repoUrl": "https://github.com/mokarramshahban/Random-Number-Generator",
+    "summary": "Random-Number-Generator is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T14:54:05Z"
+  },
+  {
+    "name": "Prime-and-Non-Prime-Number",
+    "repoUrl": "https://github.com/mokarramshahban/Prime-and-Non-Prime-Number",
+    "summary": "Prime-and-Non-Prime-Number is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using JavaScript, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "JavaScript",
+      "Web Development"
+    ],
+    "language": "JavaScript",
+    "lastUpdated": "2024-09-23T14:53:19Z"
+  },
+  {
+    "name": "Palindrome-Checker-App",
+    "repoUrl": "https://github.com/mokarramshahban/Palindrome-Checker-App",
+    "summary": "Palindrome-Checker-App is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T14:52:08Z"
+  },
+  {
+    "name": "Hide-and-Show-Password",
+    "repoUrl": "https://github.com/mokarramshahban/Hide-and-Show-Password",
+    "summary": "Hide-and-Show-Password is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T14:51:28Z"
+  },
+  {
+    "name": "Get-Unicode-Character-Value",
+    "repoUrl": "https://github.com/mokarramshahban/Get-Unicode-Character-Value",
+    "summary": "Get-Unicode-Character-Value is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T14:50:42Z"
+  },
+  {
+    "name": "Counter-Applicatoin",
+    "repoUrl": "https://github.com/mokarramshahban/Counter-Applicatoin",
+    "summary": "Counter-Applicatoin is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T14:49:25Z"
+  },
+  {
+    "name": "email-validation",
+    "repoUrl": "https://github.com/mokarramshahban/email-validation",
+    "summary": "email-validation is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using JavaScript, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "JavaScript",
+      "Web Development"
+    ],
+    "language": "JavaScript",
+    "lastUpdated": "2024-09-23T14:03:59Z"
+  },
+  {
+    "name": "random-password-generator",
+    "repoUrl": "https://github.com/mokarramshahban/random-password-generator",
+    "summary": "random-password-generator is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-23T06:46:57Z"
+  },
+  {
+    "name": "light-bulb-on-off",
+    "repoUrl": "https://github.com/mokarramshahban/light-bulb-on-off",
+    "summary": "light-bulb-on-off is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-22T17:46:53Z"
+  },
+  {
+    "name": "hello-name",
+    "repoUrl": "https://github.com/mokarramshahban/hello-name",
+    "summary": "hello-name is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-22T16:03:30Z"
+  },
+  {
+    "name": "weatherApp",
+    "repoUrl": "https://github.com/mokarramshahban/weatherApp",
+    "summary": "weatherApp is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-21T09:36:10Z"
+  },
+  {
+    "name": "TodoApp",
+    "repoUrl": "https://github.com/mokarramshahban/TodoApp",
+    "summary": "TodoApp is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-09-20T18:54:58Z"
+  },
+  {
+    "name": "color_combination",
+    "repoUrl": "https://github.com/mokarramshahban/color_combination",
+    "summary": "color_combination is a software project developed by mokarramshahban.",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-08-17T09:09:15Z"
+  },
+  {
+    "name": "TALA-Fruit-Snack",
+    "repoUrl": "https://github.com/mokarramshahban/TALA-Fruit-Snack",
+    "summary": "TALA Fruit Snack - Website ( Clone )TALA Fruit Snack - Website ( Clone ) Project Summary: Interactive PC Screen-Exclusive Website",
+    "highlight": "Engineered using UI / Web Development, Web Development with clean component architecture and responsive design.",
+    "tags": [
+      "UI / Web Development",
+      "Web Development"
+    ],
+    "language": "UI / Web Development",
+    "lastUpdated": "2024-07-14T19:12:50Z"
+  }
+]
