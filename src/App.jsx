@@ -28,7 +28,7 @@ export default function App() {
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Main Content Body */}
-      <div className="main-page-content">
+      <div className="main-page-content" style={{ paddingTop: '24px' }}>
         <div className="tab-content" id="myTabContent">
           <div className="main-demo-front">
             <div className="container">
