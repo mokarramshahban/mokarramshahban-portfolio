@@ -8,6 +8,7 @@ import ProjectsSection from './components/ProjectsSection';
 import ServicesSection from './components/ServicesSection';
 import ContactSection from './components/ContactSection';
 import Modals from './components/Modals';
+import ChatWidget from './components/ChatWidget';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -48,6 +49,9 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Floating AI Chat Assistant */}
+      <ChatWidget />
 
       {/* Popup Modals */}
       <Modals />
