@@ -207,13 +207,19 @@ body, h1, h2, h3, h4, h5, h6, .card-title, .title, p, span, a, button {
   text-overflow: ellipsis !important;
 }
 
-/* Always keep active glowing border & ambient light visible on active cards */
-.tmp-profile-card.tmponhover.active {
-  border-color: var(--color-primary) !important;
-  box-shadow: 0 10px 30px rgba(0, 163, 255, 0.25) !important;
+/* Card Base & Hover Physics — Low opacity border by default, vibrant persona accent glow on hover */
+.tmp-profile-card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  transition: border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.tmp-profile-card.tmponhover.active .tmp-light {
+.tmp-profile-card.tmponhover:hover {
+  border-color: var(--persona-accent, #00a3ff) !important;
+  box-shadow: 0 12px 35px var(--persona-accent-glow, rgba(0, 163, 255, 0.3)) !important;
+}
+
+.tmp-profile-card.tmponhover:hover .tmp-light {
   opacity: 1 !important;
   visibility: visible !important;
 }

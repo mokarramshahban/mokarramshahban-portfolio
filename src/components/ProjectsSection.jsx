@@ -51,7 +51,7 @@ export default function ProjectsSection({ activeTab }) {
       <div className="personal-portfolio-right-inner-wrapper mt--50 about-tab in-bentogrid">
         
         {/* Banner Section */}
-        <div className="banner-personal-portfolio tmponhover paralax-image tmp-card-body with-bento-about-banner tmp-profile-card position-relative mb--30 pb--40 pt--30 active">
+        <div className="banner-personal-portfolio tmponhover paralax-image tmp-card-body with-bento-about-banner tmp-profile-card position-relative mb--30 pb--40 pt--30">
           <div className="section-header text-center">
             <h4 className="subtitle theme-gradient mb-2">
               <i className="fa-solid fa-code-branch me-2"></i> OPEN SOURCE REPOSITORIES

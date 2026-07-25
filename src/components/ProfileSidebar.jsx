@@ -1,9 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePersonalization } from '../context/PersonalizationContext';
+
+/**
+ * Calculates real-time Online/Offline status based on Mokarram's IST availability schedule:
+ * - Shift Time (Mon-Fri 6:30 PM - 3:30 AM IST): Offline (working job shift)
+ * - Mon: Online 10:00 AM - 5:00 PM IST
+ * - Tue-Fri: Online 2:00 PM - 5:00 PM IST (wakes 2 PM, before 6:30 PM shift)
+ * - Sat: Online 2:00 PM - 10:00 PM IST
+ * - Sun: Online 10:00 AM - 10:00 PM IST (off day)
+ */
+function getISTStatus() {
+  const now = new Date();
+  
+  // Format current time to Asia/Kolkata timezone (IST)
+  const dayStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', weekday: 'long' }).format(now);
+  const parts = new Intl.DateTimeFormat('en-US', { 
+    timeZone: 'Asia/Kolkata', 
+    hour12: false, 
+    hour: '2-digit', 
+    minute: '2-digit' 
+  }).formatToParts(now);
+  
+  const hour = parseInt(parts.find(p => p.type === 'hour').value, 10);
+  const minute = parseInt(parts.find(p => p.type === 'minute').value, 10);
+  const totalMinutes = hour * 60 + minute;
+
+  let isOnline = false;
+  let scheduleNote = '';
+
+  switch (dayStr) {
+    case 'Monday':
+      // Available 10:00 AM (600 mins) to 5:00 PM (1020 mins) IST
+      isOnline = totalMinutes >= 600 && totalMinutes < 1020;
+      scheduleNote = isOnline ? 'Online • Available (10 AM - 5 PM IST)' : 'Offline • Available Mon 10 AM IST';
+      break;
+
+    case 'Tuesday':
+    case 'Wednesday':
+    case 'Thursday':
+    case 'Friday':
+      // Available 2:00 PM (840 mins) to 5:00 PM (1020 mins) IST
+      // Shift: 6:30 PM - 3:30 AM IST
+      isOnline = totalMinutes >= 840 && totalMinutes < 1020;
+      scheduleNote = isOnline ? 'Online • Available (2 PM - 5 PM IST)' : 'Offline • Working Shift / Resting';
+      break;
+
+    case 'Saturday':
+      // Available 2:00 PM (840 mins) to 10:00 PM (1320 mins) IST
+      isOnline = totalMinutes >= 840 && totalMinutes < 1320;
+      scheduleNote = isOnline ? 'Online • Available (2 PM - 10 PM IST)' : 'Offline • Available Sat 2 PM IST';
+      break;
+
+    case 'Sunday':
+      // Available 10:00 AM (600 mins) to 10:00 PM (1320 mins) IST
+      isOnline = totalMinutes >= 600 && totalMinutes < 1320;
+      scheduleNote = isOnline ? 'Online • Available (10 AM - 10 PM IST)' : 'Offline • Available Sun 10 AM IST';
+      break;
+
+    default:
+      isOnline = false;
+      scheduleNote = 'Offline';
+  }
+
+  return { isOnline, scheduleNote };
+}
 
 export default function ProfileSidebar({ setActiveTab, activeTab }) {
   const [copied, setCopied] = useState(false);
+  const [statusInfo, setStatusInfo] = useState(() => getISTStatus());
   const { themeConfig, persona } = usePersonalization();
+
+  // Periodically evaluate IST availability every minute
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStatusInfo(getISTStatus());
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("mokarramshahban.in@gmail.com");
@@ -16,7 +90,7 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
   return (
     <div className={`col-xl-4 ${activeTab === 'home' ? '' : 'd-none d-xl-block'}`}>
       <div 
-        className="tmp-profile-card with-sticky profile-picture-area mt-0 paralax-image tmponhover single-animation animation-order-1 active" 
+        className="tmp-profile-card with-sticky profile-picture-area mt-0 paralax-image tmponhover single-animation animation-order-1" 
         style={{
           backgroundColor: '#0c1017',
           borderRadius: '24px',
@@ -56,21 +130,29 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
               }}
             />
 
-            {/* Online Status Pill Badge on Avatar */}
+            {/* Real-time Dynamic IST Status Pill Badge on Avatar */}
             <div 
+              title={statusInfo.scheduleNote}
               style={{
                 position: 'absolute',
                 bottom: '12px',
                 right: '12px',
-                backgroundColor: 'rgba(10, 15, 24, 0.85)',
-                border: '1px solid rgba(16, 185, 129, 0.4)',
-                backdropFilter: 'blur(8px)',
+                backgroundColor: 'rgba(10, 15, 24, 0.88)',
+                border: statusInfo.isOnline 
+                  ? '1px solid rgba(16, 185, 129, 0.45)' 
+                  : '1px solid rgba(148, 163, 184, 0.25)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
                 borderRadius: '20px',
-                padding: '4px 10px',
+                padding: '4px 11px',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+                boxShadow: statusInfo.isOnline 
+                  ? '0 4px 15px rgba(16, 185, 129, 0.25)' 
+                  : '0 4px 12px rgba(0, 0, 0, 0.4)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
               }}
             >
               <span 
@@ -78,13 +160,20 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  backgroundColor: '#10b981',
-                  boxShadow: '0 0 6px #10b981',
-                  animation: 'statusPulse 2s ease-in-out infinite',
+                  backgroundColor: statusInfo.isOnline ? '#10b981' : '#64748b',
+                  boxShadow: statusInfo.isOnline ? '0 0 8px #10b981' : 'none',
+                  animation: statusInfo.isOnline ? 'statusPulse 2s ease-in-out infinite' : 'none',
                 }} 
               />
-              <span style={{ fontSize: '10.5px', fontWeight: '700', color: '#10b981', letterSpacing: '0.3px' }}>
-                Online
+              <span 
+                style={{ 
+                  fontSize: '10.5px', 
+                  fontWeight: '700', 
+                  color: statusInfo.isOnline ? '#10b981' : '#94a3b8', 
+                  letterSpacing: '0.3px' 
+                }}
+              >
+                {statusInfo.isOnline ? 'Online' : 'Offline'}
               </span>
             </div>
           </div>
