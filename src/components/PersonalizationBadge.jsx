@@ -212,52 +212,111 @@ export default function PersonalizationBadge() {
             ))}
           </div>
 
-          {/* Override buttons */}
-          <div style={{ marginBottom: '16px' }}>
+          {/* Manual Theme Override Grid */}
+          <div style={{ marginBottom: '18px' }}>
             <div style={{ fontSize: '11px', color: '#808898', fontWeight: '700', letterSpacing: '0.5px', marginBottom: '10px' }}>
               MANUAL THEME OVERRIDE
             </div>
-            <div className="d-flex flex-wrap gap-2">
-              {personaList.map((p) => (
-                <button
-                  key={p.id}
-                  onClick={() => { overridePersona(p.id); setIsOpen(false); }}
-                  style={{
-                    padding: '6px 12px',
-                    borderRadius: '12px',
-                    fontSize: '11.5px',
-                    fontWeight: '700',
-                    border: `1px solid ${p.theme['--persona-accent-border']}`,
-                    backgroundColor: activePersona === p.id ? p.theme['--persona-badge-bg'] : 'rgba(255,255,255,0.03)',
-                    color: activePersona === p.id ? p.theme['--persona-badge-color'] : '#808898',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                  }}
-                >
-                  {p.emoji} {p.badge}
-                </button>
-              ))}
+
+            <div 
+              style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(2, 1fr)', 
+                gap: '10px' 
+              }}
+            >
+              {personaList.map((p) => {
+                const isActive = activePersona === p.id;
+                const accentColor = p.theme['--persona-badge-color'];
+                const accentBorder = p.theme['--persona-accent-border'];
+                const accentBg = p.theme['--persona-badge-bg'];
+
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => { overridePersona(p.id); }}
+                    style={{
+                      padding: '10px 12px',
+                      borderRadius: '14px',
+                      fontSize: '12px',
+                      fontWeight: '700',
+                      border: isActive ? `1.5px solid ${accentColor}` : `1px solid ${accentBorder}`,
+                      backgroundColor: isActive ? accentBg : 'rgba(255, 255, 255, 0.03)',
+                      color: isActive ? accentColor : '#a0a8c0',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '8px',
+                      boxShadow: isActive ? `0 0 16px ${p.theme['--persona-accent-glow']}` : 'none',
+                      transition: 'all 0.25s ease',
+                      textAlign: 'left',
+                      outline: 'none',
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+                        e.currentTarget.style.borderColor = accentColor;
+                        e.currentTarget.style.color = '#ffffff';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+                        e.currentTarget.style.borderColor = accentBorder;
+                        e.currentTarget.style.color = '#a0a8c0';
+                      }
+                    }}
+                  >
+                    <div className="d-flex align-items-center gap-2 flex-grow-1 overflow-hidden">
+                      <span style={{ fontSize: '15px' }}>{p.emoji}</span>
+                      <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {p.badge}
+                      </span>
+                    </div>
+
+                    {isActive && (
+                      <span style={{ fontSize: '11px', color: accentColor, fontWeight: '900' }}>✓</span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Reset */}
+          {/* Reset Button */}
           <button
-            onClick={() => { resetPersona(); setIsOpen(false); }}
+            onClick={() => { resetPersona(); }}
             style={{
               width: '100%',
-              padding: '8px',
-              borderRadius: '10px',
+              padding: '10px 14px',
+              borderRadius: '14px',
               fontSize: '12px',
               fontWeight: '700',
-              border: '1px solid rgba(255,255,255,0.08)',
-              backgroundColor: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(255, 255, 255, 0.03)',
               color: '#808898',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              transition: 'all 0.25s ease',
+              outline: 'none',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.color = '#808898';
             }}
           >
-            <i className="fa-regular fa-rotate-left me-2" />
-            Reset Adaptive Detection
+            <i className="fa-regular fa-rotate-left" style={{ fontSize: '13px' }} />
+            <span>Reset to Default Theme</span>
           </button>
         </div>
       )}

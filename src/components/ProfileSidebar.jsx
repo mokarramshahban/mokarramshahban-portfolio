@@ -22,7 +22,7 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
           borderRadius: '24px',
           border: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--persona-accent-soft)',
-          padding: '20px 20px 20px 20px',
+          padding: '28px 22px 22px 22px',
           position: 'relative',
           overflow: 'hidden',
           backdropFilter: 'blur(16px)',
@@ -33,7 +33,7 @@ export default function ProfileSidebar({ setActiveTab, activeTab }) {
           
           {/* Avatar Profile Image Container */}
           <div 
-            className="profile-avatar-wrap position-relative mx-auto mb-3 text-center"
+            className="profile-avatar-wrap position-relative mx-auto mt-2 mb-3 text-center"
             style={{
               width: '100%',
               maxWidth: '280px',
