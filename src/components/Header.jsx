@@ -47,23 +47,52 @@ export default function Header({ activeTab, setActiveTab }) {
           </span>
         </a>
 
-        <a 
-          href="#"
-          onClick={(e) => { e.preventDefault(); setActiveTab('contactme'); }}
-          style={{
-            backgroundColor: 'var(--persona-accent-soft)',
-            border: '1px solid var(--persona-accent-border)',
-            color: 'var(--persona-accent)',
-            borderRadius: '20px',
-            padding: '5px 14px',
-            fontSize: '12px',
-            fontWeight: '600',
-            textDecoration: 'none',
-            transition: 'all 0.3s ease'
-          }}
-        >
-          Let's Talk 💬
-        </a>
+        <div className="d-flex align-items-center gap-2">
+          <a 
+            href="#"
+            onClick={(e) => { 
+              e.preventDefault(); 
+              const btn = document.querySelector('.persona-theme-btn');
+              if (btn) btn.click();
+            }}
+            title="Theme Settings"
+            aria-label="Theme Settings"
+            style={{
+              backgroundColor: 'var(--persona-accent-soft)',
+              border: '1px solid var(--persona-accent-border)',
+              color: 'var(--persona-accent)',
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '13px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            🎨
+          </a>
+
+          <a 
+            href="#"
+            onClick={(e) => { e.preventDefault(); setActiveTab('contactme'); }}
+            style={{
+              backgroundColor: 'var(--persona-accent-soft)',
+              border: '1px solid var(--persona-accent-border)',
+              color: 'var(--persona-accent)',
+              borderRadius: '20px',
+              padding: '5px 14px',
+              fontSize: '12px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            Let's Talk 💬
+          </a>
+        </div>
       </div>
 
       {/* Main Desktop & Floating Mobile Bottom Header */}
