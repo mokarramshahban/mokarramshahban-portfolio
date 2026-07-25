@@ -6066,163 +6066,123 @@ iframe {
 Background Image 
 =============================*/
 .bg_image--1 {
-  background-image: url(../images/bg/bg-image-1.html);
 }
 
 .bg_image--2 {
-  background-image: url(../images/bg/bg-image-2.html);
 }
 
 .bg_image--3 {
-  background-image: url(../images/bg/bg-image-3.html);
 }
 
 .bg_image--4 {
-  background-image: url(../images/bg/bg-image-4.html);
 }
 
 .bg_image--5 {
-  background-image: url(../images/bg/bg-image-5.html);
 }
 
 .bg_image--6 {
-  background-image: url(../images/bg/bg-image-6.html);
 }
 
 .bg_image--7 {
-  background-image: url(../images/bg/bg-image-7.html);
 }
 
 .bg_image--8 {
-  background-image: url(../images/bg/bg-image-8.html);
 }
 
 .bg_image--9 {
-  background-image: url(../images/bg/bg-image-9.html);
 }
 
 .bg_image--10 {
-  background-image: url(../images/bg/bg-image-10.html);
 }
 
 .bg_image--11 {
-  background-image: url(../images/bg/bg-image-11.html);
 }
 
 .bg_image--12 {
-  background-image: url(../images/bg/bg-image-12.html);
 }
 
 .bg_image--13 {
-  background-image: url(../images/bg/bg-image-13.html);
 }
 
 .bg_image--14 {
-  background-image: url(../images/bg/bg-image-14.html);
 }
 
 .bg_image--15 {
-  background-image: url(../images/bg/bg-image-15.html);
 }
 
 .bg_image--16 {
-  background-image: url(../images/bg/bg-image-16.html);
 }
 
 .bg_image--17 {
-  background-image: url(../images/bg/bg-image-17.html);
 }
 
 .bg_image--18 {
-  background-image: url(../images/bg/bg-image-18.html);
 }
 
 .bg_image--19 {
-  background-image: url(../images/bg/bg-image-19.html);
 }
 
 .bg_image--20 {
-  background-image: url(../images/bg/bg-image-20.html);
 }
 
 .bg_image--21 {
-  background-image: url(../images/bg/bg-image-21.html);
 }
 
 .bg_image--22 {
-  background-image: url(../images/bg/bg-image-22.html);
 }
 
 .bg_image--23 {
-  background-image: url(../images/bg/bg-image-23.html);
 }
 
 .bg_image--24 {
-  background-image: url(../images/bg/bg-image-24.html);
 }
 
 .bg_image--25 {
-  background-image: url(../images/bg/bg-image-25.html);
 }
 
 .bg_image--26 {
-  background-image: url(../images/bg/bg-image-26.html);
 }
 
 .bg_image--27 {
-  background-image: url(../images/bg/bg-image-27.html);
 }
 
 .bg_image--28 {
-  background-image: url(../images/bg/bg-image-28.html);
 }
 
 .bg_image--29 {
-  background-image: url(../images/bg/bg-image-29.html);
 }
 
 .bg_image--30 {
-  background-image: url(../images/bg/bg-image-30.html);
 }
 
 .bg_image--31 {
-  background-image: url(../images/bg/bg-image-31.html);
 }
 
 .bg_image--32 {
-  background-image: url(../images/bg/bg-image-32.html);
 }
 
 .bg_image--33 {
-  background-image: url(../images/bg/bg-image-33.html);
 }
 
 .bg_image--34 {
-  background-image: url(../images/bg/bg-image-34.html);
 }
 
 .bg_image--35 {
-  background-image: url(../images/bg/bg-image-35.html);
 }
 
 .bg_image--36 {
-  background-image: url(../images/bg/bg-image-36.html);
 }
 
 .bg_image--37 {
-  background-image: url(../images/bg/bg-image-37.html);
 }
 
 .bg_image--38 {
-  background-image: url(../images/bg/bg-image-38.html);
 }
 
 .bg_image--39 {
-  background-image: url(../images/bg/bg-image-39.html);
 }
 
 .bg_image--40 {
-  background-image: url(../images/bg/bg-image-40.html);
 }
 
 /* Height and width */
@@ -12264,7 +12224,6 @@ header.header-full-width.header--sticky.sticky {
   background-attachment: fixed;
 }
 .tmp-banner-one-area.style-2 {
-  background-image: url(../images/bg/bg-image-3.html);
   min-height: 950px;
   display: flex;
   align-items: center;
@@ -12314,7 +12273,6 @@ header.header-full-width.header--sticky.sticky {
   align-items: center;
   justify-content: center;
   padding-top: 0;
-  background-image: url(../images/banner/banner-background-02.html);
 }
 @media only screen and (max-width: 767px) {
   .tmp-banner-one-area.style-3, .tmp-banner-one-area.style-4 {
@@ -12385,7 +12343,6 @@ header.header-full-width.header--sticky.sticky {
 }
 .tmp-banner-one-area.style-4 {
   min-height: 900px;
-  background-image: url(../images/banner/banner-background-04.html);
   position: relative;
   background-image: none;
 }
@@ -17741,7 +17698,6 @@ section.clients-testimonial-area {
   background-attachment: fixed;
 }
 .tmp-banner-one-area.style-2 {
-  background-image: url(../images/bg/bg-image-3.html);
   min-height: 950px;
   display: flex;
   align-items: center;
@@ -17791,7 +17747,6 @@ section.clients-testimonial-area {
   align-items: center;
   justify-content: center;
   padding-top: 0;
-  background-image: url(../images/banner/banner-background-02.html);
 }
 @media only screen and (max-width: 767px) {
   .tmp-banner-one-area.style-3, .tmp-banner-one-area.style-4 {
@@ -17862,7 +17817,6 @@ section.clients-testimonial-area {
 }
 .tmp-banner-one-area.style-4 {
   min-height: 900px;
-  background-image: url(../images/banner/banner-background-04.html);
   position: relative;
   background-image: none;
 }
@@ -28759,7 +28713,6 @@ body.white-version .card-greeting p {
   background: var(--color-card);
   grid-row-gap: 2.78rem;
   border: 1px solid var(--stroke-dark-100);
-  background-image: url(../images/bg/bg-footer.html);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29041,14 +28994,12 @@ div#featured-project-carousel {
 }
 
 .featured-project-carousel .carousel-control-prev-icon {
-  background: url(../images/icons/short-arrow-left.html) center center no-repeat;
   width: 4rem;
   height: 4rem;
   display: inline-block;
 }
 
 .featured-project-carousel .carousel-control-next-icon {
-  background: url(../images/icons/short-arrow-right.html) center center no-repeat;
   width: 4rem;
   height: 4rem;
   display: inline-block;
@@ -29633,7 +29584,6 @@ body.color-pink {
   --color-primary: #EA4C89;
 }
 body.color-pink .bg_image--2 {
-  background-image: url(../images/bg/bg-image-13.html);
 }
 body.color-primary-3rd {
   --color-primary: var(--color-primary-3rd);
@@ -29776,16 +29726,13 @@ body.tmp-white-version .tmp-contact-about-inner .info-box {
   background: var(--color-white);
 }
 body.tmp-white-version .tmp-banner-one-area.style-2 {
-  background-image: url(../images/bg/bg-image-9.html);
 }
 body.tmp-white-version .bg_image--8 {
-  background-image: url(../images/bg/bg-image-8.html);
 }
 body.tmp-white-version.primary-yellow .bg_image--8 {
   background-image: url(../images/bg/04.webp);
 }
 body.tmp-white-version .tmp-banner-one-area.style-4 {
-  background-image: url(../images/bg/bg-image-11.html);
 }
 body.tmp-white-version .tmp-popup-mobile-menu .header-top .close-menu .close-button {
   background: rgba(10, 10, 10, 0.06);

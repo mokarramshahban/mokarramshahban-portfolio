@@ -31,11 +31,11 @@ export default function App() {
         <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {/* Main Content Body */}
-        <div className="main-page-content" style={{ paddingTop: '24px' }}>
+        <div className="main-page-content" style={{ paddingTop: '8px' }}>
           <div className="tab-content" id="myTabContent">
             <div className="main-demo-front">
               <div className="container">
-                <div className="row">
+                <div className="row g-4">
                   {/* Left Profile Sidebar Card */}
                   <ProfileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
 

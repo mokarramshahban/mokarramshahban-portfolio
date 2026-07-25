@@ -56,21 +56,33 @@ export default function ServicesSection({ activeTab, setActiveTab }) {
     {
       step: '01',
       title: 'Discovery & System Audit',
+      icon: 'fa-regular fa-compass',
+      color: '#00a3ff',
+      tag: '⚡ Requirements & Audit',
       desc: 'Analyzing system requirements, mapping database data flows, and conducting initial performance & UI/UX audits.'
     },
     {
       step: '02',
       title: 'Architecture & Schema Design',
+      icon: 'fa-regular fa-sitemap',
+      color: '#06b6d4',
+      tag: '📐 Type-Safe DB Models',
       desc: 'Structuring type-safe component libraries, REST API endpoints, and scalable PostgreSQL/MongoDB database models.'
     },
     {
       step: '03',
       title: 'Full-Stack Development',
+      icon: 'fa-regular fa-code',
+      color: '#00e6a8',
+      tag: '🚀 React & Backend APIs',
       desc: 'Building responsive React/Next.js frontends, FastAPI backends, and seamless third-party AI integrations.'
     },
     {
       step: '04',
       title: 'Speed Tuning & Deployment',
+      icon: 'fa-regular fa-rocket',
+      color: '#00e676',
+      tag: '⚡ 95+ Core Web Vitals',
       desc: 'Profiling load speeds, optimizing Core Web Vitals, setting up CI/CD, and delivering clean technical documentation.'
     }
   ];
@@ -257,42 +269,46 @@ export default function ServicesSection({ activeTab, setActiveTab }) {
                   <div 
                     className="d-flex align-items-center justify-content-center mb-4 position-relative"
                     style={{
-                      width: '54px',
-                      height: '54px',
+                      width: '56px',
+                      height: '56px',
                       borderRadius: '50%',
-                      backgroundColor: '#10151f',
+                      backgroundColor: '#0c1017',
                       border: `3px solid ${step.color}`,
-                      color: step.color,
-                      fontSize: '18px',
+                      color: '#ffffff',
+                      fontSize: '17px',
                       fontWeight: '900',
-                      boxShadow: `0 0 20px ${step.color}66`,
+                      boxShadow: `0 0 24px ${step.color}80, 0 0 10px ${step.color}40`,
                       zIndex: 2,
-                      transition: 'transform 0.3s ease, boxShadow 0.3s ease'
+                      transition: 'transform 0.3s ease, boxShadow 0.3s ease',
+                      background: `radial-gradient(circle, ${step.color}25 0%, #0c1017 80%)`,
                     }}
                   >
-                    <span>{step.step}</span>
+                    <span style={{ textShadow: `0 0 10px ${step.color}` }}>{step.step}</span>
                   </div>
 
                   {/* Step Bento Card */}
                   <div 
                     className="p-4 w-100 h-100 d-flex flex-column justify-content-between position-relative overflow-hidden"
                     style={{
-                      backgroundColor: '#10151f',
-                      borderRadius: '18px',
-                      border: `1px solid ${step.color}35`,
-                      boxShadow: `0 6px 20px rgba(0, 0, 0, 0.35)`,
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                      cursor: 'pointer'
+                      backgroundColor: '#0d121c',
+                      borderRadius: '20px',
+                      border: `1px solid ${step.color}40`,
+                      borderTop: `3px solid ${step.color}`,
+                      boxShadow: `0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px ${step.color}15`,
+                      transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+                      cursor: 'pointer',
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-6px)';
+                      e.currentTarget.style.transform = 'translateY(-8px)';
                       e.currentTarget.style.borderColor = step.color;
-                      e.currentTarget.style.boxShadow = `0 12px 32px ${step.color}35`;
+                      e.currentTarget.style.boxShadow = `0 16px 40px ${step.color}45, 0 0 25px ${step.color}25`;
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = `${step.color}35`;
-                      e.currentTarget.style.boxShadow = `0 6px 20px rgba(0, 0, 0, 0.35)`;
+                      e.currentTarget.style.borderColor = `${step.color}40`;
+                      e.currentTarget.style.boxShadow = `0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px ${step.color}15`;
                     }}
                   >
                     <div>
@@ -300,28 +316,41 @@ export default function ServicesSection({ activeTab, setActiveTab }) {
                         <div 
                           className="d-flex align-items-center justify-content-center"
                           style={{
-                            width: '42px',
-                            height: '42px',
-                            borderRadius: '12px',
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '14px',
                             backgroundColor: `${step.color}18`,
-                            border: `1px solid ${step.color}40`,
+                            border: `1px solid ${step.color}45`,
                             color: step.color,
-                            fontSize: '18px'
+                            fontSize: '19px',
+                            boxShadow: `0 0 12px ${step.color}25`
                           }}
                         >
                           <i className={step.icon}></i>
                         </div>
 
-                        <span style={{ fontSize: '10px', backgroundColor: `${step.color}18`, color: step.color, padding: '3px 10px', borderRadius: '20px', fontWeight: '800', border: `1px solid ${step.color}35`, letterSpacing: '0.5px' }}>
-                          PHASE 0{sIndex + 1}
+                        <span 
+                          style={{ 
+                            fontSize: '10.5px', 
+                            backgroundColor: `${step.color}18`, 
+                            color: step.color, 
+                            padding: '4px 12px', 
+                            borderRadius: '20px', 
+                            fontWeight: '800', 
+                            border: `1px solid ${step.color}45`, 
+                            letterSpacing: '0.6px',
+                            boxShadow: `0 0 10px ${step.color}15`
+                          }}
+                        >
+                          PHASE {step.step}
                         </span>
                       </div>
 
-                      <h5 style={{ color: '#ffffff', fontSize: '16.5px', fontWeight: '800', marginBottom: '8px' }}>
+                      <h5 style={{ color: '#ffffff', fontSize: '17px', fontWeight: '800', marginBottom: '10px', letterSpacing: '-0.3px' }}>
                         {step.title}
                       </h5>
 
-                      <p style={{ fontSize: '13.5px', color: '#9098a8', lineHeight: '1.6', margin: 0 }}>
+                      <p style={{ fontSize: '13.5px', color: '#a0a8c0', lineHeight: '1.65', margin: 0 }}>
                         {step.desc}
                       </p>
                     </div>
@@ -330,9 +359,9 @@ export default function ServicesSection({ activeTab, setActiveTab }) {
                     <div 
                       className="d-flex align-items-center justify-content-center mt-4 p-2.5"
                       style={{
-                        backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                        borderRadius: '10px',
-                        border: '1px solid rgba(255, 255, 255, 0.06)'
+                        backgroundColor: `${step.color}10`,
+                        borderRadius: '12px',
+                        border: `1px solid ${step.color}30`
                       }}
                     >
                       <span 
@@ -340,7 +369,8 @@ export default function ServicesSection({ activeTab, setActiveTab }) {
                           fontSize: '11.5px',
                           color: step.color,
                           fontWeight: '700',
-                          textAlign: 'center'
+                          textAlign: 'center',
+                          letterSpacing: '0.2px'
                         }}
                       >
                         {step.tag}

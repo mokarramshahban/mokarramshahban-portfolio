@@ -45,71 +45,60 @@ function ScoreBar({ label, emoji, value, max, color }) {
 // Main Badge Component
 // ---------------------------------------------------------------------------
 export default function PersonalizationBadge() {
-  const { activePersona, themeConfig, scores, isPersonaActive, resetPersona, overridePersona } = usePersonalization();
+  const { activePersona, themeConfig, scores, resetPersona, overridePersona } = usePersonalization();
   const [isOpen, setIsOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
-
-  // Fade in badge after it becomes active
-  useEffect(() => {
-    if (isPersonaActive) {
-      const t = setTimeout(() => setVisible(true), 400);
-      return () => clearTimeout(t);
-    } else {
-      setVisible(false);
-    }
-  }, [isPersonaActive]);
 
   const maxScore = Math.max(...Object.values(scores), 1);
   const personaList = Object.values(PERSONAS);
 
-  if (!visible) return null;
-
   return (
     <>
-      {/* ── Floating Badge Pill ─────────────────────────────────────── */}
-      <div
+      {/* ── Floating Badge Button (Full pill on desktop, Icon on mobile) ── */}
+      <button
+        type="button"
+        className="persona-theme-btn"
         onClick={() => setIsOpen(true)}
-        title="Click to view your detected interest profile"
+        aria-label="Toggle Theme & Adaptive Persona Engine"
+        title="Click to view & change theme persona"
         style={{
           position: 'fixed',
           bottom: '24px',
           left: '24px',
           zIndex: 9990,
-          display: 'flex',
+          display: 'inline-flex',
           alignItems: 'center',
-          gap: '7px',
-          padding: '7px 14px',
-          borderRadius: '20px',
+          gap: '8px',
+          width: 'auto',
+          maxWidth: 'fit-content',
           backgroundColor: themeConfig.theme['--persona-badge-bg'],
           border: `1px solid ${themeConfig.theme['--persona-accent-border']}`,
-          boxShadow: `0 4px 18px ${themeConfig.theme['--persona-accent-glow']}`,
+          boxShadow: `0 4px 20px ${themeConfig.theme['--persona-accent-glow']}`,
           cursor: 'pointer',
-          backdropFilter: 'blur(10px)',
-          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           animation: 'personaBadgePop 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1) translateY(0)';
+          outline: 'none',
         }}
       >
-        {/* Pulse dot */}
+        {/* Pulse Dot */}
         <span
           style={{
-            width: '7px',
-            height: '7px',
+            width: '8px',
+            height: '8px',
             borderRadius: '50%',
             backgroundColor: themeConfig.theme['--persona-badge-color'],
-            boxShadow: `0 0 6px ${themeConfig.theme['--persona-badge-color']}`,
+            boxShadow: `0 0 8px ${themeConfig.theme['--persona-badge-color']}`,
             animation: 'personaPulse 1.8s ease-in-out infinite',
             flexShrink: 0,
           }}
         />
+
+        {/* Text (Visible on Desktop) */}
         <span
+          className="persona-badge-text-desktop"
           style={{
-            fontSize: '11.5px',
+            fontSize: '12px',
             fontWeight: '700',
             color: themeConfig.theme['--persona-badge-color'],
             whiteSpace: 'nowrap',
@@ -117,11 +106,16 @@ export default function PersonalizationBadge() {
         >
           {themeConfig.emoji} {themeConfig.badge} Active
         </span>
+
+        {/* Palette Icon */}
         <i
-          className="fa-regular fa-sliders"
-          style={{ fontSize: '11px', color: themeConfig.theme['--persona-badge-color'], opacity: 0.7 }}
+          className="fa-solid fa-palette persona-badge-icon"
+          style={{
+            fontSize: '13px',
+            color: themeConfig.theme['--persona-badge-color'],
+          }}
         />
-      </div>
+      </button>
 
       {/* ── Backdrop ────────────────────────────────────────────────── */}
       {isOpen && (
@@ -133,6 +127,7 @@ export default function PersonalizationBadge() {
             zIndex: 9995,
             backgroundColor: 'rgba(5,8,15,0.75)',
             backdropFilter: 'blur(6px)',
+            WebkitBackdropFilter: 'blur(6px)',
             animation: 'fadeIn 0.2s ease',
           }}
         />
@@ -141,41 +136,63 @@ export default function PersonalizationBadge() {
       {/* ── Modal Panel ─────────────────────────────────────────────── */}
       {isOpen && (
         <div
+          className="persona-modal-panel"
           style={{
             position: 'fixed',
-            bottom: '72px',
-            left: '24px',
             zIndex: 9996,
-            width: '340px',
             backgroundColor: '#0d1117',
             borderRadius: '20px',
             border: `1px solid ${themeConfig.theme['--persona-accent-border']}`,
             boxShadow: `0 20px 60px rgba(0,0,0,0.6), 0 0 30px ${themeConfig.theme['--persona-accent-glow']}`,
-            padding: '24px',
+            padding: '24px 22px 22px 22px',
             animation: 'personaModalSlide 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards',
           }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Glowing Circular Close Button in Top-Right Corner */}
+          <button
+            onClick={() => setIsOpen(false)}
+            aria-label="Close modal"
+            className="persona-modal-close-btn"
+            title="Close theme panel"
+            style={{
+              position: 'absolute',
+              top: '16px',
+              right: '16px',
+              width: '32px',
+              height: '32px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              border: `1px solid ${themeConfig.theme['--persona-accent-border']}`,
+              color: themeConfig.theme['--persona-badge-color'],
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              outline: 'none',
+              padding: '0',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              animation: 'closeBtnGlow 2.5s ease-in-out infinite',
+              zIndex: 10,
+            }}
+          >
+            <i className="fa-solid fa-xmark" style={{ fontSize: '14px', lineHeight: 1 }} />
+          </button>
+
           {/* Header */}
-          <div className="d-flex justify-content-between align-items-start mb-3">
-            <div>
-              <div style={{ fontSize: '10px', color: themeConfig.theme['--persona-badge-color'], fontWeight: '800', letterSpacing: '1px', marginBottom: '3px' }}>
-                ADAPTIVE THEME ENGINE
-              </div>
-              <h5 style={{ color: '#fff', fontWeight: '800', fontSize: '16px', margin: 0 }}>
-                {themeConfig.emoji} {themeConfig.label}
-              </h5>
+          <div className="mb-3" style={{ paddingRight: '36px' }}>
+            <div style={{ fontSize: '10px', color: themeConfig.theme['--persona-badge-color'], fontWeight: '800', letterSpacing: '1px', marginBottom: '3px' }}>
+              ADAPTIVE THEME ENGINE
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              style={{ background: 'none', border: 'none', color: '#808898', fontSize: '18px', cursor: 'pointer', padding: '0', lineHeight: 1 }}
-            >
-              ×
-            </button>
+            <h5 style={{ color: '#fff', fontWeight: '800', fontSize: '16px', margin: 0 }}>
+              {themeConfig.emoji} {themeConfig.label}
+            </h5>
           </div>
 
           <p style={{ fontSize: '12.5px', color: '#9098a8', lineHeight: '1.5', marginBottom: '18px' }}>
-            Your portfolio theme adapts based on the tags and topics you interact with.
+            Your portfolio theme adapts automatically based on your interactions, or you can pick a manual theme below.
           </p>
 
           {/* Score Breakdown */}
@@ -198,7 +215,7 @@ export default function PersonalizationBadge() {
           {/* Override buttons */}
           <div style={{ marginBottom: '16px' }}>
             <div style={{ fontSize: '11px', color: '#808898', fontWeight: '700', letterSpacing: '0.5px', marginBottom: '10px' }}>
-              MANUAL OVERRIDE
+              MANUAL THEME OVERRIDE
             </div>
             <div className="d-flex flex-wrap gap-2">
               {personaList.map((p) => (
@@ -206,7 +223,7 @@ export default function PersonalizationBadge() {
                   key={p.id}
                   onClick={() => { overridePersona(p.id); setIsOpen(false); }}
                   style={{
-                    padding: '5px 12px',
+                    padding: '6px 12px',
                     borderRadius: '12px',
                     fontSize: '11.5px',
                     fontWeight: '700',
@@ -240,13 +257,61 @@ export default function PersonalizationBadge() {
             }}
           >
             <i className="fa-regular fa-rotate-left me-2" />
-            Reset Detection
+            Reset Adaptive Detection
           </button>
         </div>
       )}
 
-      {/* ── Keyframe Styles ─────────────────────────────────────────── */}
+      {/* ── Responsive Styling ───────────────────────────────────────── */}
       <style>{`
+        /* Desktop Default */
+        .persona-theme-btn {
+          display: inline-flex !important;
+          width: auto !important;
+          max-width: fit-content !important;
+          padding: 7px 14px !important;
+          border-radius: 20px !important;
+        }
+        .persona-theme-btn:hover {
+          transform: scale(1.05) translateY(-2px);
+        }
+        .persona-modal-panel {
+          bottom: 74px;
+          left: 24px;
+          width: 340px;
+        }
+        .persona-modal-close-btn:hover {
+          transform: scale(1.12) rotate(90deg) !important;
+          background-color: ${themeConfig.theme['--persona-badge-bg']} !important;
+          box-shadow: 0 0 16px ${themeConfig.theme['--persona-accent-glow']} !important;
+          color: #ffffff !important;
+        }
+
+        /* Mobile View (max-width: 768px) */
+        @media (max-width: 768px) {
+          .persona-theme-btn {
+            display: none !important;
+          }
+          .persona-modal-panel {
+            bottom: 74px !important;
+            left: 16px !important;
+            right: 16px !important;
+            width: auto !important;
+            max-width: calc(100vw - 32px) !important;
+          }
+        }
+
+        /* Keyframes */
+        @keyframes closeBtnGlow {
+          0%, 100% {
+            box-shadow: 0 0 8px ${themeConfig.theme['--persona-accent-glow']};
+            border-color: ${themeConfig.theme['--persona-accent-border']};
+          }
+          50% {
+            box-shadow: 0 0 16px ${themeConfig.theme['--persona-accent-glow']}, 0 0 10px ${themeConfig.theme['--persona-badge-color']}70;
+            border-color: ${themeConfig.theme['--persona-badge-color']};
+          }
+        }
         @keyframes personaBadgePop {
           from { opacity: 0; transform: scale(0.8) translateY(10px); }
           to   { opacity: 1; transform: scale(1) translateY(0); }

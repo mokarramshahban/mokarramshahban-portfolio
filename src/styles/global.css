@@ -418,3 +418,59 @@ body, h1, h2, h3, h4, h5, h6, .card-title, .title, p, span, a, button {
     padding-bottom: 95px !important;
   }
 }
+
+/* ─── Global Clean Header Gap & Card Alignment System ─────────────────────── */
+/* Ensure main content container starts with a clean 24px gap below sticky header */
+.main-page-content {
+  padding-top: 24px !important;
+}
+
+/* Reset main grid row top offsets */
+.main-demo-front .container > .row {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.main-demo-front .container > .row > .col-xl-4,
+.main-demo-front .container > .row > .col-xl-8 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Reset all right-side section tab containers to 0 top offset */
+.tab-content,
+.tab-content .tab-pane,
+.personal-portfolio-right-inner-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.tab-content .tab-pane > .row:first-child,
+.tab-content .tab-pane > div > .row:first-child,
+.personal-portfolio-right-inner-wrapper > .row:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.tab-content .tab-pane > .row:first-child > [class*="col-"]:first-child,
+.tab-content .tab-pane > div > .row:first-child > [class*="col-"]:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Left Profile Sidebar Sticky Card:
+   top: 96px (72px sticky header + 24px gap) ensures card maintains the exact
+   same 24px gap below the header bar on initial landing AND while scrolling! */
+.tmp-profile-card.with-sticky {
+  position: sticky !important;
+  top: 96px !important;
+  margin-top: 0 !important;
+  z-index: 10 !important;
+}
+
+
+
+
+
+
+
