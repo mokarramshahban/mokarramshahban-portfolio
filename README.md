@@ -1,26 +1,45 @@
 # Mokarram Shahban — Developer Portfolio 🚀
 
-A modern, high-performance, and responsive personal portfolio website built with **React 19**, **Vite**, and custom **Vanilla CSS** with a dark glassmorphic Bento Grid aesthetic.
+A state-of-the-art, high-performance, and responsive personal developer portfolio website built with **React 19**, **Vite**, **Vanilla CSS3**, and a glassmorphic **Bento Grid Architecture**.
 
 ---
 
-## 🌟 Features & Highlights
+## 🌟 Key Features & Architectural Progress
 
-- 🎨 **Modern Bento Grid Architecture**: Clean, structured glassmorphic cards with responsive 2x2 grid alignment.
-- 👤 **Dark Studio Theme Profile Sidebar**: Custom dark theme portrait, quick email copy button, and social profiles.
-- 💼 **Interactive Experience Marquee**: Infinite smooth vertical marquee showcasing work experience across Vizva Consultancy Services, AOSC Technologies, and MxNext.in.
-- 🛠️ **My Expert Area**: 5-column grid featuring high-definition SVG & FontAwesome icons for React, Next.js, Node.js, TypeScript, Python, FastAPI, MongoDB, PostgreSQL, Tailwind CSS, and Git/GitHub.
-- 🏛️ **Govt UI/UX Audits & Achievements**: Highlights UX audits conducted directly for Government of India departments and national awards.
-- 📩 **Direct Email & Contact Cards**: Functional 1-click email trigger (`mailto:`) and copy clipboard integration without friction.
-- 📱 **Floating Mobile Glass Navigation**: Compact icon-only glassmorphic bottom navigation bar optimized for mobile viewports.
+### 🎨 Persona-Adaptive Dynamic Theme Engine
+- **4 Real-Time Persona Modes**: Toggle between `Full-Stack`, `UI/UX`, `Backend`, and `AI & ML` personas.
+- **Adaptive Root Variable Remapping**: CSS variables (`--persona-accent`, `--persona-gradient`, `--persona-accent-glow`) automatically transition colors, borders, and shadows across the entire UI.
+- **Persona Skill Matching**: Dynamically highlights persona-relevant tech stack tags and projects.
+
+### 🧠 Smart Skill-to-Project Recommendation Matrix
+- **Interactive Tech Stack Filtering**: Select any technology badge (`React.js`, `Next.js`, `Node.js`, `FastAPI`, `MongoDB`, `PostgreSQL`, `Tailwind CSS`, `Python`, `TypeScript`) to instantly filter and rank open-source projects.
+- **Matched Tag Highlighting**: Real-time visual feedback highlighting matched skills on project cards.
+
+### 👤 Bento Profile Sidebar
+- **Avatar Status Indicator**: Live pulsing `Online` status pill badge.
+- **Role Tag**: Dedicated `Software Developer` badge.
+- **Micro Bento Metrics Grid**: Displays quick stats (`29+ Projects`, `2+ Govt Audits`, `1.2k+ Fest Attendees`).
+- **Interactive Email Copy Box**: One-click clipboard copy with instant feedback (`Copied! ✓`).
+- **Gradient CTA & Social Tiles**: Bento action buttons (`Get In Touch 🚀`, `Copy Email 📋`) and 42px × 42px glassmorphic social icons (`GitHub`, `LinkedIn`, `Instagram`).
+
+### ⚡ 4-Phase Engineering Workflow & Methodology
+- **Interactive Process Pipeline**: 4-phase methodology timeline (`Discovery & Audit` 🧭, `Architecture & Schema` 📐, `Full-Stack Dev` 💻, `Speed & Deployment` 🚀).
+- **Glowing Timeline Nodes**: Radial node halos (`01`, `02`, `03`, `04`) with persona glow shadows and top border accent bars.
+- **Deliverable Highlights**: Color-coded deliverable tags (`⚡ Requirements & Audit`, `📐 Type-Safe DB Models`, `🚀 React & Backend APIs`, `⚡ 95+ Core Web Vitals`).
+
+### 📱 Adaptive Mobile Glass Navigation & Responsive Layout
+- **Sticky Mobile Top Header**: Compact brand logo bar with dark glass backdrop (`blur(12px)`), quick palette modal toggle, and contact CTA.
+- **Floating Glass Bottom Navbar**: Compact icon-only navigation bar for small viewports (`Home`, `About`, `Projects`, `Services`, `Contact`).
+- **Unified 24px Header Gap System**: Standardized baseline alignment across all section tabs and sticky sidebar scrolling.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Dependencies
 
-- **Frontend Core**: [React 19](https://react.dev/), [Vite](https://vitejs.dev/)
-- **Styling & Icons**: Custom Vanilla CSS3, [Bootstrap 5 Grid](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/)
-- **State & Logic**: ES6+ JavaScript, React Context & Hooks
+- **Core Framework**: [React 19](https://react.dev/), [Vite 5](https://vitejs.dev/)
+- **Styling Architecture**: Custom Vanilla CSS3, CSS Custom Properties (Variables), Backdrop Filters, [Bootstrap 5 Grid System](https://getbootstrap.com/)
+- **Icon Systems**: [FontAwesome Pro/Free v6](https://fontawesome.com/)
+- **State Management**: React Context API (`PersonalizationContext`), Custom Hooks
 
 ---
 
@@ -28,12 +47,14 @@ A modern, high-performance, and responsive personal portfolio website built with
 
 ### Prerequisites
 
-Ensure you have **Node.js** (v18 or higher) installed on your machine.
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
 
-### Installation
+### Installation & Run
 
-1. **Clone or download the project folder**:
+1. **Clone the repository**:
    ```bash
+   git clone https://github.com/mokarramshahban/mokarramshahban-portfolio.git
    cd mokarramshahban-portfolio
    ```
 
@@ -42,12 +63,12 @@ Ensure you have **Node.js** (v18 or higher) installed on your machine.
    npm install
    ```
 
-3. **Start the local development server**:
+3. **Start development server**:
    ```bash
-   npm start
+   npm run dev
    ```
 
-4. **Build for production**:
+4. **Build production bundle**:
    ```bash
    npm run build
    ```
@@ -60,4 +81,5 @@ Ensure you have **Node.js** (v18 or higher) installed on your machine.
 - **Role**: Software Developer at Vizva Consultancy Services  
 - **Email**: [mokarramshahban.in@gmail.com](mailto:mokarramshahban.in@gmail.com)  
 - **GitHub**: [github.com/mokarramshahban](https://github.com/mokarramshahban)  
+- **LinkedIn**: [linkedin.com/in/mokarram-shahban](https://www.linkedin.com/in/mokarram-shahban/)  
 - **Location**: Gurugram, India  
