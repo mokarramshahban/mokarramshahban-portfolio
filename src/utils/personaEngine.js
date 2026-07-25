@@ -177,7 +177,7 @@ export function calculateScores(clickHistory) {
 export function calculateDominantPersona(clickHistory) {
   const scores = calculateScores(clickHistory);
   const total = Object.values(scores).reduce((a, b) => a + b, 0);
-  if (total < 2) return 'fullstack'; // default until enough signals
+  if (total < 2) return 'frontend'; // default Electric Blue persona until enough signals
   const dominant = Object.entries(scores).sort((a, b) => b[1] - a[1])[0];
   return dominant[0];
 }

@@ -35,6 +35,7 @@ const PersonalizationContext = createContext({
 // Storage Helpers
 // ---------------------------------------------------------------------------
 const STORAGE_KEY = 'portfolio_persona_history';
+const OVERRIDE_KEY = 'portfolio_persona_override';
 
 function loadFromSession() {
   try {
@@ -42,6 +43,14 @@ function loadFromSession() {
     return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
+  }
+}
+
+function loadOverrideFromSession() {
+  try {
+    return sessionStorage.getItem(OVERRIDE_KEY) || null;
+  } catch {
+    return null;
   }
 }
 
@@ -58,7 +67,7 @@ function saveToSession(history) {
 // ---------------------------------------------------------------------------
 export function PersonalizationProvider({ children }) {
   const [clickHistory, setClickHistory] = useState(() => loadFromSession());
-  const [overrideId, setOverrideId] = useState(null);
+  const [overrideId, setOverrideId] = useState(() => loadOverrideFromSession());
 
   // Derived state
   const dominantPersona = calculateDominantPersona(clickHistory);
@@ -66,7 +75,7 @@ export function PersonalizationProvider({ children }) {
   const themeConfig = getThemeConfig(activePersona);
   const scores = calculateScores(clickHistory);
   const totalSignals = clickHistory.length;
-  const isPersonaActive = totalSignals >= 2; // badge shows after 2+ interactions
+  const isPersonaActive = totalSignals >= 2 || overrideId !== null;
 
   // Apply CSS variables to root whenever persona changes
   useEffect(() => {
@@ -87,15 +96,21 @@ export function PersonalizationProvider({ children }) {
     setClickHistory((prev) => [...prev, tag]);
     // Clear manual override when new interactions come in
     setOverrideId(null);
+    try { sessionStorage.removeItem(OVERRIDE_KEY); } catch {}
   }, []);
 
   /**
-   * Reset all interaction history and return to default fullstack persona.
+   * Reset all interaction history and return to default Electric Blue theme.
    */
   const resetPersona = useCallback(() => {
     setClickHistory([]);
     setOverrideId(null);
-    sessionStorage.removeItem(STORAGE_KEY);
+    try {
+      sessionStorage.removeItem(STORAGE_KEY);
+      sessionStorage.removeItem(OVERRIDE_KEY);
+    } catch {}
+    const defaultTheme = getThemeConfig('frontend').theme;
+    applyThemeToRoot(defaultTheme);
   }, []);
 
   /**
@@ -104,6 +119,9 @@ export function PersonalizationProvider({ children }) {
    */
   const overridePersona = useCallback((personaId) => {
     setOverrideId(personaId);
+    try {
+      sessionStorage.setItem(OVERRIDE_KEY, personaId);
+    } catch {}
   }, []);
 
   return (
