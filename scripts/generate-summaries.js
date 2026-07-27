@@ -14,6 +14,13 @@ const AI_MODEL = 'claude-3-5-sonnet';
  * Ensures the portfolio highlights Full-Stack, React, Node.js, and DB capabilities.
  */
 const PROJECT_KNOWLEDGE_BASE = {
+  'appifyra': {
+    name: 'Appifyra',
+    summary: 'A full-stack web application built with React 18 and Firebase, featuring user authentication, real-time data management, EmailJS contact integration, and a Node.js backend server.',
+    highlight: 'Architected full-stack Firebase integration with React Router for client-side routing, EmailJS for automated contact workflows, and a dedicated Node.js server deployed on Vercel.',
+    tags: ['React.js', 'Firebase', 'Node.js', 'EmailJS', 'React Router', 'Full Stack'],
+    language: 'React.js & Firebase',
+  },
   'food-delivery-app-ui-react.js': {
     name: 'Food-Delivery-App-UI-REACT.JS',
     summary: 'A feature-rich production-grade online food delivery application built with React 19, Redux Toolkit for state management, dynamic routing, and Tailwind CSS.',

@@ -1,5 +1,21 @@
 [
   {
+    "name": "Appifyra",
+    "repoUrl": "https://github.com/mokarramshahban/appifyra",
+    "summary": "A full-stack web application built with React 18 and Firebase, featuring user authentication, real-time data management, EmailJS contact integration, and a Node.js backend server.",
+    "highlight": "Architected full-stack Firebase integration with React Router for client-side routing, EmailJS for automated contact workflows, and a dedicated Node.js server deployed on Vercel.",
+    "tags": [
+      "React.js",
+      "Firebase",
+      "Node.js",
+      "EmailJS",
+      "React Router",
+      "Full Stack"
+    ],
+    "language": "React.js & Firebase",
+    "lastUpdated": "2026-07-26T22:31:52Z"
+  },
+  {
     "name": "mokarramshahban-portfolio",
     "repoUrl": "https://github.com/mokarramshahban/mokarramshahban-portfolio",
     "summary": "Personal developer portfolio featuring a glassmorphic Bento grid architecture and an automated Node.js AI build pipeline.",
@@ -13,7 +29,7 @@
       "Full Stack"
     ],
     "language": "React.js",
-    "lastUpdated": "2026-07-24T11:45:24Z"
+    "lastUpdated": "2026-07-25T11:08:28Z"
   },
   {
     "name": "TRIPAZI-Travel-Agency",
@@ -176,18 +192,6 @@
     ],
     "language": "Frontend",
     "lastUpdated": "2025-04-29T11:03:47Z"
-  },
-  {
-    "name": "appifyra",
-    "repoUrl": "https://github.com/mokarramshahban/appifyra",
-    "summary": "appifyra is a software project developed by mokarramshahban.",
-    "highlight": "Engineered using JavaScript, Web Development with clean component architecture and responsive design.",
-    "tags": [
-      "JavaScript",
-      "Web Development"
-    ],
-    "language": "JavaScript",
-    "lastUpdated": "2025-03-19T05:24:46Z"
   },
   {
     "name": "kcetassignments",
